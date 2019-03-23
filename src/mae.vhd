@@ -8,6 +8,7 @@ port(
 	IRQ,N		: in std_logic;
 	inst_reg	: in std_logic_vector (31 downto 0);
 	inst_mem	: in std_logic_vector (31 downto 0);
+	effacer		: in std_logic;
 	--commandes a generer
 	IRQServ					: out std_logic;
 	PCSel					: out std_logic_vector (1 downto 0);
