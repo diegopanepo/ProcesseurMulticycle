@@ -12,7 +12,7 @@ end entity;
 
 Architecture reg of registre32 is
 
-   signal registr : std_logic_vector (31 downto 0);
+	signal registr : std_logic_vector (31 downto 0);
 
 begin
 
@@ -25,6 +25,6 @@ begin
 		end if;
 	end process;
 
-   DATAOUT <= registr;
-	
+	DATAOUT <= registr;
+
 end reg;

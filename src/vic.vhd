@@ -26,21 +26,21 @@ begin
 			IRQ <= irq0_memo or irq1_memo;
 		end if;
 	end process;
-	
+
 	Interr0: process(irq0)	--evaluation d'interruption 0
 	begin
 		if irq0 = '1' then
 			irq0_memo <= '1';
 		end if;
 	end process Interr0;
-	
+
 	Interr1: process(irq1)	--evaluation d'interruption 1
 	begin
 		if irq1 = '1' then
 			irq1_memo <= '1';
 		end if;
 	end process Interr1;
-	
+
 	RecepAcqui: process(iqr_serv)	--evaluation d'acquittement d'interruption
 	begin
 		if iqr_serv = '1' then
@@ -49,8 +49,8 @@ begin
 			VICPC <= (others => '0');
 		end if;
 	end process RecepAcqui;
-	
+
 	VICPC <= x"00000009" when irq0_memo = '1';
 	VICPC <= x"00000015" when irq1_memo = '1';
-	
+
 end ContrIntVect;
