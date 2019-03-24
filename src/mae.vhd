@@ -39,9 +39,9 @@ begin
 	process(clk)
 	begin
 		if rst = '1' then
-			EtatPresent = ETAT0;
+			EtatPresent <= ETAT0;
 		elsif rising_edge(clk) then
-			EtatPresent = EtatFutur;
+			EtatPresent <= EtatFutur;
 		end if;
 	end process;
 
@@ -95,7 +95,7 @@ begin
 					EtatFutur <= ETAT3;
 				elsif (instruc_mem = BLT and N = '0') then
 					EtatFutur <= ETAT4;
-				elsif (ISR = '1' and BX = '1') then
+				elsif (instruc_mem = BX and ISR = '1') then
 					EtatFutur <= ETAT15;
 				elsif (IRQ = '0' and ISR = '0') then
 					EtatFutur <= ETAT16;

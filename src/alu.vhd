@@ -16,9 +16,9 @@ Architecture Arch_Alu of alu is
 begin
 
 	S <= std_logic_vector(unsigned(A)+unsigned(B)) when OP="00" else
-		B   when OP="01" else
+		B when OP = "01" else
 		std_logic_vector(unsigned(A)-unsigned(B)) when OP="10" else
-		A   when OP="11" ;
+		A when OP = "11" ;
 	N <= '1' when S(31)='1' else
 		'0' when S(31)='0';
 	Y <= S;
