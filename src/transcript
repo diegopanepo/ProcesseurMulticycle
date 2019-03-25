@@ -1,0 +1,28 @@
+# ** Error: (vish-42) Unsupported ModelSim library format for "/nfs/home/sasl/eleves/ei-se/3800533/ProjetVHDL/ProcesseurMulticycle/src/work". (Format: 4)
+# Window cannot be closed because the modal window "IMPORTANT Information" is still open.
+pwd
+# /nfs/home/sasl/eleves/ei-se/3800533/ProjetVHDL/ProcesseurMulticycle/src
+vcom -reportprogress 300 -work work /nfs/home/sasl/eleves/ei-se/3800533/ProjetVHDL/ProcesseurMulticycle/src/alu.vhd
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# ** Error: (vcom-42) Unsupported ModelSim library format for "/nfs/home/sasl/eleves/ei-se/3800533/ProjetVHDL/ProcesseurMulticycle/src/work". (Format: 4)
+# ** Error: VHDL Compiler exiting
+# ** Error: (vish-42) Unsupported ModelSim library format for "/nfs/home/sasl/eleves/ei-se/3800533/ProjetVHDL/ProcesseurMulticycle/src/work". (Format: 4)
+vcom -reportprogress 300 -work work /nfs/home/sasl/eleves/ei-se/3800533/ProjetVHDL/ProcesseurMulticycle/src/alu.vhd
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# ** Error: (vcom-42) Unsupported ModelSim library format for "/nfs/home/sasl/eleves/ei-se/3800533/ProjetVHDL/ProcesseurMulticycle/src/work". (Format: 4)
+# ** Error: VHDL Compiler exiting
+# ** Error: (vish-42) Unsupported ModelSim library format for "/nfs/home/sasl/eleves/ei-se/3800533/ProjetVHDL/ProcesseurMulticycle/src/work". (Format: 4)
+pwd
+# /nfs/home/sasl/eleves/ei-se/3800533/ProjetVHDL/ProcesseurMulticycle/src
+cd work
+ls
+# _info
+# _lib1_2.qdb
+# _lib1_2.qpg
+# _lib1_2.qtl
+# _lib.qdb
+# _vmake
+cd ../
+# ** Error: (vish-42) Unsupported ModelSim library format for "/nfs/home/sasl/eleves/ei-se/3800533/ProjetVHDL/ProcesseurMulticycle/src/work". (Format: 4)
+pwd
+# /nfs/home/sasl/eleves/ei-se/3800533/ProjetVHDL/ProcesseurMulticycle/src
