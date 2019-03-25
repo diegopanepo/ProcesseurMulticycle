@@ -16,4 +16,12 @@ vcom -93 DE0_TOP.vhd
 
 vcom -93 test_arm.vhd
 
+vsim work.test_arm
 
+add wave -position insertpoint  \
+sim:/test_arm/clkt \
+sim:/test_arm/rstt \
+sim:/test_arm/irq0t \
+sim:/test_arm/irq1t \
+sim:/test_arm/res \
+sim:/test_arm/arm_1/DataPath1/BancReg/Banc
