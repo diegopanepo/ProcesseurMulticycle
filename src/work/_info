@@ -9,17 +9,17 @@ Z2 DPx4 ieee 11 numeric_std 0 22 O3PF8EB`?j9=z7KT`fn941
 Z3 DPx3 std 6 textio 0 22 5>J:;AW>W0[[dW0I6EN1Q0
 Z4 DPx4 ieee 14 std_logic_1164 0 22 5=aWaoGZSMWIcH0i^f`XF1
 Z5 d/nfs/home/sasl/eleves/ei-se/3800533/ProjetVHDL/ProcesseurMulticycle/src
-Z6 8/nfs/home/sasl/eleves/ei-se/3800533/ProjetVHDL/ProcesseurMulticycle/src/alu.vhd
-Z7 F/nfs/home/sasl/eleves/ei-se/3800533/ProjetVHDL/ProcesseurMulticycle/src/alu.vhd
+Z6 8alu.vhd
+Z7 Falu.vhd
 l0
 L5
-VQzoEhk7?Q@c9K_UXZdj4e1
+Vf5Y<f6YVS^:[2_KzKiM8c1
 Z8 OV;C;10.1d;51
-32
-Z9 !s108 1553515627.039751
-Z10 !s90 -reportprogress|300|-work|work|/nfs/home/sasl/eleves/ei-se/3800533/ProjetVHDL/ProcesseurMulticycle/src/alu.vhd|
-Z11 !s107 /nfs/home/sasl/eleves/ei-se/3800533/ProjetVHDL/ProcesseurMulticycle/src/alu.vhd|
-Z12 o-work work -O0
+31
+Z9 !s108 1553535325.877196
+Z10 !s90 -reportprogress|300|-93|alu.vhd|
+Z11 !s107 alu.vhd|
+Z12 o-93 -O0
 Z13 tExplicit 1
 !s100 D3E0@G[L[i2HZC2ObF4D;3
 !i10b 1
@@ -27,12 +27,12 @@ Aarch_alu
 R2
 R3
 R4
-DEx4 work 3 alu 0 22 QzoEhk7?Q@c9K_UXZdj4e1
+DEx4 work 3 alu 0 22 f5Y<f6YVS^:[2_KzKiM8c1
 l16
 L14
-VDLVoU6@h;:OKMBQD5dGOb3
+V^VKLa;QZoTN3][6S>3CQG1
 R8
-32
+31
 R9
 R10
 R11
@@ -40,22 +40,57 @@ R12
 R13
 !s100 @Ym`iQe<jW[:Ye[C8>1FJ0
 !i10b 1
+Earm
+Z14 w1553534363
+R3
+R4
+R5
+Z15 8/nfs/home/sasl/eleves/ei-se/3800533/ProjetVHDL/ProcesseurMulticycle/src/arm.vhd
+Z16 F/nfs/home/sasl/eleves/ei-se/3800533/ProjetVHDL/ProcesseurMulticycle/src/arm.vhd
+l0
+L12
+VXnB?ji1?`5l2TQD<hCkRS0
+R8
+32
+Z17 !s108 1553539989.496959
+Z18 !s90 -reportprogress|300|-work|work|/nfs/home/sasl/eleves/ei-se/3800533/ProjetVHDL/ProcesseurMulticycle/src/arm.vhd|
+Z19 !s107 /nfs/home/sasl/eleves/ei-se/3800533/ProjetVHDL/ProcesseurMulticycle/src/arm.vhd|
+Z20 o-work work -O0
+R13
+!s100 z]S2`hgE;VQQ7]4ZE9Dhd1
+!i10b 1
+Aarc_arm
+R3
+R4
+DEx4 work 3 arm 0 22 XnB?ji1?`5l2TQD<hCkRS0
+l141
+L21
+VQ03FME`3FJ8h637JnE9I;1
+R8
+32
+R17
+R18
+R19
+R20
+R13
+!s100 ?[f=P@dSaXF4g;0VfEeNl0
+!i10b 1
 Ebanc_registr
-Z14 w1553443926
+Z21 w1553443926
 R2
 R3
 R4
 R5
-Z15 8/nfs/home/sasl/eleves/ei-se/3800533/ProjetVHDL/ProcesseurMulticycle/src/banc_registr.vhd
-Z16 F/nfs/home/sasl/eleves/ei-se/3800533/ProjetVHDL/ProcesseurMulticycle/src/banc_registr.vhd
+Z22 8banc_registr.vhd
+Z23 Fbanc_registr.vhd
 l0
 L5
-VJcdzL<:U3SU`IVn?5o5Uf2
+VhbnNA7[HocmO^?O4KUj6K1
 R8
-32
-Z17 !s108 1553515721.631787
-Z18 !s90 -reportprogress|300|-work|work|/nfs/home/sasl/eleves/ei-se/3800533/ProjetVHDL/ProcesseurMulticycle/src/banc_registr.vhd|
-Z19 !s107 /nfs/home/sasl/eleves/ei-se/3800533/ProjetVHDL/ProcesseurMulticycle/src/banc_registr.vhd|
+31
+Z24 !s108 1553535326.854205
+Z25 !s90 -reportprogress|300|-93|banc_registr.vhd|
+Z26 !s107 banc_registr.vhd|
 R12
 R13
 !s100 mW6Ckg^gUgV`XU6386fSY1
@@ -64,72 +99,218 @@ Aarchi_reg
 R2
 R3
 R4
-DEx4 work 12 banc_registr 0 22 JcdzL<:U3SU`IVn?5o5Uf2
+DEx4 work 12 banc_registr 0 22 hbnNA7[HocmO^?O4KUj6K1
 l32
 L15
-VoW@CA^JibzIO>bLaLU[oE3
+Vd7QE]4UzmeIVL:L_EcFC53
 R8
-32
-R17
-R18
-R19
+31
+R24
+R25
+R26
 R12
 R13
 !s100 Ce]l[GXlA=]NC_=;Odg;i1
 !i10b 1
+Edatapath
+Z27 w1553535247
+Z28 DPx4 ieee 18 std_logic_unsigned 0 22 RYmj;=TK`k=k>D@Cz`zoB3
+Z29 DPx4 ieee 15 std_logic_arith 0 22 4`Y?g_lkdn;7UL9IiJck01
+R3
+R4
+R5
+Z30 8/nfs/home/sasl/eleves/ei-se/3800533/ProjetVHDL/ProcesseurMulticycle/src/DataPath.vhd
+Z31 F/nfs/home/sasl/eleves/ei-se/3800533/ProjetVHDL/ProcesseurMulticycle/src/DataPath.vhd
+l0
+L14
+VIZfY:lNQVgLe7YzD^>^YB3
+R8
+32
+Z32 !s108 1553539983.662250
+Z33 !s90 -reportprogress|300|-work|work|/nfs/home/sasl/eleves/ei-se/3800533/ProjetVHDL/ProcesseurMulticycle/src/DataPath.vhd|
+Z34 !s107 /nfs/home/sasl/eleves/ei-se/3800533/ProjetVHDL/ProcesseurMulticycle/src/DataPath.vhd|
+R20
+R13
+!s100 Wfmee]QQ>6EM0dS:VP9>n0
+!i10b 1
+Aarchi
+R28
+R29
+R3
+R4
+DEx4 work 8 datapath 0 22 IZfY:lNQVgLe7YzD^>^YB3
+l227
+L62
+V7V;`?6YiiaYz`ScOe8e8C2
+R8
+32
+R32
+R33
+R34
+R20
+R13
+!s100 OEEmn95h0Dk8MOmDKUFG`3
+!i10b 1
+Ede0_top
+Z35 w1553443924
+R3
+R4
+R5
+Z36 8DE0_TOP.vhd
+Z37 FDE0_TOP.vhd
+l0
+L11
+V=]4^JVHR0b[d5?aV[kSM73
+R8
+31
+Z38 !s108 1553535335.182773
+Z39 !s90 -reportprogress|300|-93|DE0_TOP.vhd|
+Z40 !s107 DE0_TOP.vhd|
+R12
+R13
+!s100 SbUi8DNl7`fW>DLQ1YR[j2
+!i10b 1
+Aarchi
+R3
+R4
+DEx4 work 7 de0_top 0 22 =]4^JVHR0b[d5?aV[kSM73
+l41
+L25
+Vim7Hb3ki>CUfEQ4EhcB>D0
+R8
+31
+R38
+R39
+R40
+R12
+R13
+!s100 RjDhhjE54=::5_GZXj>:82
+!i10b 1
 Eext_signe
-R14
+Z41 w1553523543
 R2
 R3
 R4
 R5
-Z20 8/nfs/home/sasl/eleves/ei-se/3800533/ProjetVHDL/ProcesseurMulticycle/src/ext_signe.vhd
-Z21 F/nfs/home/sasl/eleves/ei-se/3800533/ProjetVHDL/ProcesseurMulticycle/src/ext_signe.vhd
+Z42 8ext_signe.vhd
+Z43 Fext_signe.vhd
 l0
 L5
-V44S>DfQ5lEm48JW4WUZ4a2
+V8DdNi5mX6lSfeL>B<:l=m0
 R8
-32
-Z22 !s108 1553515723.889962
-Z23 !s90 -reportprogress|300|-work|work|/nfs/home/sasl/eleves/ei-se/3800533/ProjetVHDL/ProcesseurMulticycle/src/ext_signe.vhd|
-Z24 !s107 /nfs/home/sasl/eleves/ei-se/3800533/ProjetVHDL/ProcesseurMulticycle/src/ext_signe.vhd|
+31
+Z44 !s108 1553535329.246761
+Z45 !s90 -reportprogress|300|-93|ext_signe.vhd|
+Z46 !s107 ext_signe.vhd|
 R12
 R13
-!s100 gdM;A^T]:I2N8]cNL9E@H2
+!s100 jIC;2W4nn0_PQh>n=XFLL2
 !i10b 1
 Aextender
 R2
 R3
 R4
-DEx4 work 9 ext_signe 0 22 44S>DfQ5lEm48JW4WUZ4a2
+DEx4 work 9 ext_signe 0 22 8DdNi5mX6lSfeL>B<:l=m0
 l17
 L15
-V64IEM159BPTQLb3J0^Dml2
+VO@P9ej2PXRXahKcM_Fh5e3
 R8
-32
-R22
-R23
-R24
+31
+R44
+R45
+R46
 R12
 R13
-!s100 ]Q6R3FGA<PFAX[GDU]AcQ2
+!s100 W=WVlf7jaim=KX1QIQD<T3
 !i10b 1
-Emultip2v1
-R14
+Emae
+Z47 w1553534024
 R2
 R3
 R4
 R5
-Z25 8/nfs/home/sasl/eleves/ei-se/3800533/ProjetVHDL/ProcesseurMulticycle/src/multip2v1.vhd
-Z26 F/nfs/home/sasl/eleves/ei-se/3800533/ProjetVHDL/ProcesseurMulticycle/src/multip2v1.vhd
+Z48 8/nfs/home/sasl/eleves/ei-se/3800533/ProjetVHDL/ProcesseurMulticycle/src/MAE.vhd
+Z49 F/nfs/home/sasl/eleves/ei-se/3800533/ProjetVHDL/ProcesseurMulticycle/src/MAE.vhd
 l0
 L5
-V:FBYJ]h4agdUW2QR9D_cn0
+V_1gYZP[Q7V^8MM20JlXbg2
 R8
 32
-Z27 !s108 1553515726.762580
-Z28 !s90 -reportprogress|300|-work|work|/nfs/home/sasl/eleves/ei-se/3800533/ProjetVHDL/ProcesseurMulticycle/src/multip2v1.vhd|
-Z29 !s107 /nfs/home/sasl/eleves/ei-se/3800533/ProjetVHDL/ProcesseurMulticycle/src/multip2v1.vhd|
+Z50 !s108 1553539985.754319
+Z51 !s90 -reportprogress|300|-work|work|/nfs/home/sasl/eleves/ei-se/3800533/ProjetVHDL/ProcesseurMulticycle/src/MAE.vhd|
+Z52 !s107 /nfs/home/sasl/eleves/ei-se/3800533/ProjetVHDL/ProcesseurMulticycle/src/MAE.vhd|
+R20
+R13
+!s100 7A]P>^z6O=Am`AT@13aNm2
+!i10b 1
+Amachine
+R2
+R3
+R4
+DEx4 work 3 mae 0 22 _1gYZP[Q7V^8MM20JlXbg2
+l37
+L23
+VGQ7^S?[`47D=4Q]A[8]:j1
+R8
+32
+R50
+R51
+R52
+R20
+R13
+!s100 587ff7kAS=cd4ESeL2g0I2
+!i10b 1
+Ememoire
+R21
+R3
+R4
+R5
+Z53 8memoire.vhd
+Z54 Fmemoire.vhd
+l0
+L42
+V4Am@8`LUhdIhkdMkW;7_f2
+R8
+31
+Z55 !s108 1553535330.005508
+Z56 !s90 -reportprogress|300|-93|memoire.vhd|
+Z57 !s107 memoire.vhd|
+R12
+R13
+!s100 laIjc7d<S;SkKUA]XKQNJ2
+!i10b 1
+Asyn
+R3
+R4
+DEx4 work 7 memoire 0 22 4Am@8`LUhdIhkdMkW;7_f2
+l97
+L56
+Vmc<b9@8U:<I8VEZTYaDoo1
+R8
+31
+R55
+R56
+R57
+R12
+R13
+!s100 [Dod:8J`6M=deGFl;_5HG1
+!i10b 1
+Emultip2v1
+R21
+R2
+R3
+R4
+R5
+Z58 8multip2v1.vhd
+Z59 Fmultip2v1.vhd
+l0
+L5
+VOdV_leY<O[o_CnC@YT:^@1
+R8
+31
+Z60 !s108 1553535327.713916
+Z61 !s90 -reportprogress|300|-93|multip2v1.vhd|
+Z62 !s107 multip2v1.vhd|
 R12
 R13
 !s100 0KcGFnIk`7Hi6RmFlD>hB2
@@ -138,35 +319,35 @@ Amult
 R2
 R3
 R4
-DEx4 work 9 multip2v1 0 22 :FBYJ]h4agdUW2QR9D_cn0
+DEx4 work 9 multip2v1 0 22 OdV_leY<O[o_CnC@YT:^@1
 l18
 L16
-VCUlhVF0b=XZGBU6aZ]9f?3
+Vzc1:b;@^ITIXbSbZlm=HJ3
 R8
-32
-R27
-R28
-R29
+31
+R60
+R61
+R62
 R12
 R13
 !s100 Ufj=]:9Lih=mP3h]=<VNo2
 !i10b 1
 Emultip4v1
-R14
+R21
 R2
 R3
 R4
 R5
-Z30 8/nfs/home/sasl/eleves/ei-se/3800533/ProjetVHDL/ProcesseurMulticycle/src/multip4v1.vhd
-Z31 F/nfs/home/sasl/eleves/ei-se/3800533/ProjetVHDL/ProcesseurMulticycle/src/multip4v1.vhd
+Z63 8multip4v1.vhd
+Z64 Fmultip4v1.vhd
 l0
 L5
-VR6I@UG7a[XC=1BDVzE;Ym0
+V^`Uo71U4UV9oWSI4>PT>N3
 R8
-32
-Z32 !s108 1553515728.783143
-Z33 !s90 -reportprogress|300|-work|work|/nfs/home/sasl/eleves/ei-se/3800533/ProjetVHDL/ProcesseurMulticycle/src/multip4v1.vhd|
-Z34 !s107 /nfs/home/sasl/eleves/ei-se/3800533/ProjetVHDL/ProcesseurMulticycle/src/multip4v1.vhd|
+31
+Z65 !s108 1553535328.519873
+Z66 !s90 -reportprogress|300|-93|multip4v1.vhd|
+Z67 !s107 multip4v1.vhd|
 R12
 R13
 !s100 cl;<K78W620::efg>H>?f3
@@ -175,35 +356,35 @@ Amult
 R2
 R3
 R4
-DEx4 work 9 multip4v1 0 22 R6I@UG7a[XC=1BDVzE;Ym0
+DEx4 work 9 multip4v1 0 22 ^`Uo71U4UV9oWSI4>PT>N3
 l18
 L16
-VLETU^?^lEbh:jLF=f6@460
+VTaTC<eGi5:LDc2UDhBS`D2
 R8
-32
-R32
-R33
-R34
+31
+R65
+R66
+R67
 R12
 R13
 !s100 mXj2>CmKO3Q=l9UdQ_JQ@2
 !i10b 1
 Eregistre32
-R14
+R21
 R2
 R3
 R4
 R5
-Z35 8/nfs/home/sasl/eleves/ei-se/3800533/ProjetVHDL/ProcesseurMulticycle/src/registre32.vhd
-Z36 F/nfs/home/sasl/eleves/ei-se/3800533/ProjetVHDL/ProcesseurMulticycle/src/registre32.vhd
+Z68 8registre32.vhd
+Z69 Fregistre32.vhd
 l0
 L5
-VYm;5n``R5TK4He>8nbBEX2
+VlOU7i>U]PoB752nNFFbL50
 R8
-32
-Z37 !s108 1553515730.924319
-Z38 !s90 -reportprogress|300|-work|work|/nfs/home/sasl/eleves/ei-se/3800533/ProjetVHDL/ProcesseurMulticycle/src/registre32.vhd|
-Z39 !s107 /nfs/home/sasl/eleves/ei-se/3800533/ProjetVHDL/ProcesseurMulticycle/src/registre32.vhd|
+31
+Z70 !s108 1553535331.390450
+Z71 !s90 -reportprogress|300|-93|registre32.vhd|
+Z72 !s107 registre32.vhd|
 R12
 R13
 !s100 PI^nal]TYGGmQ9UYHKX^g1
@@ -212,35 +393,35 @@ Areg
 R2
 R3
 R4
-DEx4 work 10 registre32 0 22 Ym;5n``R5TK4He>8nbBEX2
+DEx4 work 10 registre32 0 22 lOU7i>U]PoB752nNFFbL50
 l17
 L13
-V]B1[b9O`UQC>`jGXZ`45>3
+V5c6noI3hCiTMPVjTEaGcB3
 R8
-32
-R37
-R38
-R39
+31
+R70
+R71
+R72
 R12
 R13
 !s100 AE9Gfb`?m?k<94RY85nV10
 !i10b 1
 Eregistre32ld
-R14
+R21
 R2
 R3
 R4
 R5
-Z40 8/nfs/home/sasl/eleves/ei-se/3800533/ProjetVHDL/ProcesseurMulticycle/src/registre32Ld.vhd
-Z41 F/nfs/home/sasl/eleves/ei-se/3800533/ProjetVHDL/ProcesseurMulticycle/src/registre32Ld.vhd
+Z73 8registre32Ld.vhd
+Z74 Fregistre32Ld.vhd
 l0
 L5
-VcIFF1KB]^gl3XXeFW`GDV3
+VLI41N^WLB?hQDIkM?Xh@j2
 R8
-32
-Z42 !s108 1553515732.941305
-Z43 !s90 -reportprogress|300|-work|work|/nfs/home/sasl/eleves/ei-se/3800533/ProjetVHDL/ProcesseurMulticycle/src/registre32Ld.vhd|
-Z44 !s107 /nfs/home/sasl/eleves/ei-se/3800533/ProjetVHDL/ProcesseurMulticycle/src/registre32Ld.vhd|
+31
+Z75 !s108 1553535332.136711
+Z76 !s90 -reportprogress|300|-93|registre32Ld.vhd|
+Z77 !s107 registre32Ld.vhd|
 R12
 R13
 !s100 a=OaWQGUXDeza40EoV=ji1
@@ -249,53 +430,106 @@ Areg
 R2
 R3
 R4
-DEx4 work 12 registre32ld 0 22 cIFF1KB]^gl3XXeFW`GDV3
+DEx4 work 12 registre32ld 0 22 LI41N^WLB?hQDIkM?Xh@j2
 l18
 L14
-Vm_;mG6AI@9ZCJT^G8FjVg1
+V5Yb4o6hU_Mb>Zgfd4i]TT2
 R8
-32
-R42
-R43
-R44
+31
+R75
+R76
+R77
 R12
 R13
 !s100 B`bb9g=A58mWBzOB^Q1Pj2
 !i10b 1
+Etest_arm
+Z78 w1553534612
+R3
+R4
+R5
+Z79 8/nfs/home/sasl/eleves/ei-se/3800533/ProjetVHDL/ProcesseurMulticycle/src/test_arm.vhd
+Z80 F/nfs/home/sasl/eleves/ei-se/3800533/ProjetVHDL/ProcesseurMulticycle/src/test_arm.vhd
+l0
+L4
+Vl8S:WIbcFon5i`JnhMHS21
+R8
+32
+Z81 !s108 1553539991.160354
+Z82 !s90 -reportprogress|300|-work|work|/nfs/home/sasl/eleves/ei-se/3800533/ProjetVHDL/ProcesseurMulticycle/src/test_arm.vhd|
+Z83 !s107 /nfs/home/sasl/eleves/ei-se/3800533/ProjetVHDL/ProcesseurMulticycle/src/test_arm.vhd|
+R20
+R13
+!s100 Aj6<QgP[[1g76aV7oRDe]1
+!i10b 1
+Aarc_test_arm
+R3
+R4
+DEx4 work 8 test_arm 0 22 l8S:WIbcFon5i`JnhMHS21
+l27
+L7
+V;3hdQ;23XXY2L4]HL1oez0
+!s100 1ziAC_oKfQ3D=bC8M<6_E2
+R8
+32
+R81
+R82
+R83
+R20
+R13
+!i10b 1
 Evic
-R14
+Z84 w1553540136
 R2
 R3
 R4
 R5
-Z45 8/nfs/home/sasl/eleves/ei-se/3800533/ProjetVHDL/ProcesseurMulticycle/src/vic.vhd
-Z46 F/nfs/home/sasl/eleves/ei-se/3800533/ProjetVHDL/ProcesseurMulticycle/src/vic.vhd
+Z85 8/nfs/home/sasl/eleves/ei-se/3800533/ProjetVHDL/ProcesseurMulticycle/src/vic.vhd
+Z86 F/nfs/home/sasl/eleves/ei-se/3800533/ProjetVHDL/ProcesseurMulticycle/src/vic.vhd
 l0
-L5
-VU76@Xh:eGK0X<078jF61B3
-!s100 RzLi2RJ<TMX>F1THjOz3T0
+L8
+VPQh18JVJL`o>>PzkZ97L01
+!s100 Pz:DHmCkeQ2J5OTklaFQP1
 R8
 32
 !i10b 1
-Z47 !s108 1553515734.914972
-Z48 !s90 -reportprogress|300|-work|work|/nfs/home/sasl/eleves/ei-se/3800533/ProjetVHDL/ProcesseurMulticycle/src/vic.vhd|
-Z49 !s107 /nfs/home/sasl/eleves/ei-se/3800533/ProjetVHDL/ProcesseurMulticycle/src/vic.vhd|
-R12
+Z87 !s108 1553540141.356115
+Z88 !s90 -reportprogress|300|-work|work|/nfs/home/sasl/eleves/ei-se/3800533/ProjetVHDL/ProcesseurMulticycle/src/vic.vhd|
+Z89 !s107 /nfs/home/sasl/eleves/ei-se/3800533/ProjetVHDL/ProcesseurMulticycle/src/vic.vhd|
+R20
+R13
+Artl
+R2
+R3
+R4
+DEx4 work 3 vic 0 22 PQh18JVJL`o>>PzkZ97L01
+l23
+L19
+V;6TUeoUf@Bn74iQga99lA3
+!s100 I8eJ2h<Je_01;6A2^4G`E2
+R8
+32
+!i10b 1
+R87
+R88
+R89
+R20
 R13
 Acontrintvect
 R2
 R3
 R4
-DEx4 work 3 vic 0 22 U76@Xh:eGK0X<078jF61B3
+DEx4 work 3 vic 0 22 IfAhDgW^^235H;MKQIzdS3
 l18
 L15
-VRQ@RSzJYahhEmK:9nUh<`0
-!s100 J1WJQ<^@YX`7l<:l9Y]Sg2
+Ve>mO;0hG]Y]gKVJn8R;d21
 R8
 32
-!i10b 1
-R47
-R48
-R49
-R12
+R88
+R20
 R13
+w1553538657
+Z90 !s107 /nfs/home/sasl/eleves/ei-se/3800533/ProjetVHDL/ProcesseurMulticycle/src/vic.vhd|
+!s108 1553538660.005053
+!s100 >F9EElA53VQjCIjR_VEHN0
+!i10b 1

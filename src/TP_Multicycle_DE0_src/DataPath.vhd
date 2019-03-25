@@ -171,7 +171,7 @@ architecture archi of DataPath is
 		OP : in std_logic_vector (1 downto 0);
  		A,B : in std_logic_vector (31 downto 0);
  		Y : out std_logic_vector (31 downto 0);
-      N : out std_logic ;
+      N : out std_logic
 	);
 	end component alu;
 	----------------------------------------------------

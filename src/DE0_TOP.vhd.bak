@@ -1,0 +1,239 @@
+------------------------------------------------------------------
+--																--
+--					PROCESSEUR MULTI-CYCLES						--
+--						(c) 2010-2012							--
+-- 		A.Mocco, N.Hamila, M.Fonseca, J.Denoulet, P.Garda		--
+--																--
+------------------------------------------------------------------
+library IEEE;
+use IEEE.std_logic_1164.all;
+
+ENTITY DE0_TOP IS 
+PORT (
+	iCLK_28	: IN 	std_logic;   					-- Horloge
+	iKEY	: IN 	std_logic_vector(3 DOWNTO 0);  	-- Boutons Poussoir[3:0]
+	iSW		: IN 	std_logic_vector(17 DOWNTO 0);	-- Interrupteurs[17:0]
+	oHEX0_D	: OUT 	std_logic_vector(6 DOWNTO 0);   -- Afficheur 7 Segment 0
+    oHEX1_D	: OUT 	std_logic_vector(6 DOWNTO 0);   -- Afficheur 7 Segment 1
+    oHEX2_D	: OUT 	std_logic_vector(6 DOWNTO 0);   -- Afficheur 7 Segment 2
+    oHEX3_D	: OUT 	std_logic_vector(6 DOWNTO 0);   -- Afficheur 7 Segment 3
+    oHEX4_D	: OUT 	std_logic_vector(6 DOWNTO 0);   -- Afficheur 7 Segment 4
+    oHEX5_D	: OUT 	std_logic_vector(6 DOWNTO 0);   -- Afficheur 7 Segment 5
+    oHEX6_D	: OUT 	std_logic_vector(6 DOWNTO 0);   -- Afficheur 7 Segment 6
+    oHEX7_D	: OUT 	std_logic_vector(6 DOWNTO 0);   -- Afficheur 7 Segment 7
+	oLEDG	: OUT 	std_logic_vector(8 DOWNTO 0);   -- LEDs Verte[8:0]
+    oLEDR	: OUT 	std_logic_vector(17 DOWNTO 0)   -- LEDs Rouge[17:0]
+);
+END entity;
+
+ARCHITECTURE ARCHI OF DE0_TOP IS
+
+component arm
+port(
+	rst			: 	in 	std_logic;
+	clk			:	in 	std_logic;
+	irq0,irq1 	: 	in 	std_logic;
+	resultat    : 	out	std_logic_vector(31 downto 0)
+);
+end component;
+
+signal Resultat : std_logic_vector(31 downto 0);
+signal Display : std_logic_vector(31 downto 0);
+
+signal nKEY0,nKEY1,nKEY2 :  std_logic; -- Boutons poussoirs
+
+BEGIN
+
+-- Gestion Boutons Poussoirs
+	-- Appuye: 1 / Relache: 0
+nKEY0<=not(iKEY(0));
+nKEY1<=not(iKEY(1)); 
+nKEY2<=not(iKEY(2));
+
+arm_1: arm port map(
+	rst			=>	nKEY0,
+	clk			=>	iCLK_28,
+	irq0		=>	nKEY1,
+	irq1		=>	nKEY2,
+	resultat    =>	Resultat);
+
+
+
+	Display <= (others=>'1') when iSW(0)='1'
+	else Resultat;
+
+	oLEDG(0) <= nKEY0;
+	oLEDG(1) <= nKEY1;
+	oLEDG(2) <= nKEY2;
+	
+
+	process(Display)
+	begin
+ 
+		case(Display(3 downto 0)) is
+			when "0000" =>  oHEX0_D <= "1000000"; --0
+			when "0001" =>  oHEX0_D <= "1111001"; --1
+			when "0010" =>  oHEX0_D <= "0100100"; --2
+			when "0011" =>  oHEX0_D <= "0110000"; --3
+			when "0100" =>  oHEX0_D <= "0011001"; --4
+			when "0101" =>  oHEX0_D <= "0010010"; --5
+			when "0110" =>  oHEX0_D <= "0000010"; --6
+			when "0111" =>  oHEX0_D <= "1111000"; --7
+			when "1000" =>  oHEX0_D <= "0000000"; --8
+			when "1001" =>  oHEX0_D <= "0010000"; --9
+			when "1010" =>  oHEX0_D <= "0001000"; --A
+			when "1011" =>  oHEX0_D <= "0000011"; --B
+			when "1100" =>  oHEX0_D <= "1000110"; --C
+			when "1101" =>  oHEX0_D <= "0100001"; --D
+			when "1110" =>  oHEX0_D <= "0000110"; --E
+			when "1111" =>  oHEX0_D <= "0001110"; --F
+			when others  => oHEX0_D <= "0111111"; --'-'
+		end case;
+
+ 		case(Display(7 downto 4)) is
+			when "0000" =>  oHEX1_D <= "1000000"; --0
+			when "0001" =>  oHEX1_D <= "1111001"; --1
+			when "0010" =>  oHEX1_D <= "0100100"; --2
+			when "0011" =>  oHEX1_D <= "0110000"; --3
+			when "0100" =>  oHEX1_D <= "0011001"; --4
+			when "0101" =>  oHEX1_D <= "0010010"; --5
+			when "0110" =>  oHEX1_D <= "0000010"; --6
+			when "0111" =>  oHEX1_D <= "1111000"; --7
+			when "1000" =>  oHEX1_D <= "0000000"; --8
+			when "1001" =>  oHEX1_D <= "0010000"; --9
+			when "1010" =>  oHEX1_D <= "0001000"; --A
+			when "1011" =>  oHEX1_D <= "0000011"; --B
+			when "1100" =>  oHEX1_D <= "1000110"; --C
+			when "1101" =>  oHEX1_D <= "0100001"; --D
+			when "1110" =>  oHEX1_D <= "0000110"; --E
+			when "1111" =>  oHEX1_D <= "0001110"; --F
+			when others  => oHEX1_D <= "0111111"; --'-'
+		end case;
+
+		case(Display(11 downto 8)) is
+			when "0000" =>  oHEX2_D <= "1000000"; --0
+			when "0001" =>  oHEX2_D <= "1111001"; --1
+			when "0010" =>  oHEX2_D <= "0100100"; --2
+			when "0011" =>  oHEX2_D <= "0110000"; --3
+			when "0100" =>  oHEX2_D <= "0011001"; --4
+			when "0101" =>  oHEX2_D <= "0010010"; --5
+			when "0110" =>  oHEX2_D <= "0000010"; --6
+			when "0111" =>  oHEX2_D <= "1111000"; --7
+			when "1000" =>  oHEX2_D <= "0000000"; --8
+			when "1001" =>  oHEX2_D <= "0010000"; --9
+			when "1010" =>  oHEX2_D <= "0001000"; --A
+			when "1011" =>  oHEX2_D <= "0000011"; --B
+			when "1100" =>  oHEX2_D <= "1000110"; --C
+			when "1101" =>  oHEX2_D <= "0100001"; --D
+			when "1110" =>  oHEX2_D <= "0000110"; --E
+			when "1111" =>  oHEX2_D <= "0001110"; --F
+			when others  => oHEX2_D <= "0111111"; --'-'
+		end case;
+
+		case(Display(15 downto 12)) is
+			when "0000" =>  oHEX3_D <= "1000000"; --0
+			when "0001" =>  oHEX3_D <= "1111001"; --1
+			when "0010" =>  oHEX3_D <= "0100100"; --2
+			when "0011" =>  oHEX3_D <= "0110000"; --3
+			when "0100" =>  oHEX3_D <= "0011001"; --4
+			when "0101" =>  oHEX3_D <= "0010010"; --5
+			when "0110" =>  oHEX3_D <= "0000010"; --6
+			when "0111" =>  oHEX3_D <= "1111000"; --7
+			when "1000" =>  oHEX3_D <= "0000000"; --8
+			when "1001" =>  oHEX3_D <= "0010000"; --9
+			when "1010" =>  oHEX3_D <= "0001000"; --A
+			when "1011" =>  oHEX3_D <= "0000011"; --B
+			when "1100" =>  oHEX3_D <= "1000110"; --C
+			when "1101" =>  oHEX3_D <= "0100001"; --D
+			when "1110" =>  oHEX3_D <= "0000110"; --E
+			when "1111" =>  oHEX3_D <= "0001110"; --F
+			when others  => oHEX3_D <= "0111111"; --'-'
+		end case;
+
+		case(Display(19 downto 16)) is
+			when "0000" =>  oHEX4_D <= "1000000"; --0
+			when "0001" =>  oHEX4_D <= "1111001"; --1
+			when "0010" =>  oHEX4_D <= "0100100"; --2
+			when "0011" =>  oHEX4_D <= "0110000"; --3
+			when "0100" =>  oHEX4_D <= "0011001"; --4
+			when "0101" =>  oHEX4_D <= "0010010"; --5
+			when "0110" =>  oHEX4_D <= "0000010"; --6
+			when "0111" =>  oHEX4_D <= "1111000"; --7
+			when "1000" =>  oHEX4_D <= "0000000"; --8
+			when "1001" =>  oHEX4_D <= "0010000"; --9
+			when "1010" =>  oHEX4_D <= "0001000"; --A
+			when "1011" =>  oHEX4_D <= "0000011"; --B
+			when "1100" =>  oHEX4_D <= "1000110"; --C
+			when "1101" =>  oHEX4_D <= "0100001"; --D
+			when "1110" =>  oHEX4_D <= "0000110"; --E
+			when "1111" =>  oHEX4_D <= "0001110"; --F
+			when others  => oHEX4_D <= "0111111"; --'-'
+		end case;		
+      
+		case(Display(23 downto 20)) is
+			when "0000" =>  oHEX5_D <= "1000000"; --0
+			when "0001" =>  oHEX5_D <= "1111001"; --1
+			when "0010" =>  oHEX5_D <= "0100100"; --2
+			when "0011" =>  oHEX5_D <= "0110000"; --3
+			when "0100" =>  oHEX5_D <= "0011001"; --4
+			when "0101" =>  oHEX5_D <= "0010010"; --5
+			when "0110" =>  oHEX5_D <= "0000010"; --6
+			when "0111" =>  oHEX5_D <= "1111000"; --7
+			when "1000" =>  oHEX5_D <= "0000000"; --8
+			when "1001" =>  oHEX5_D <= "0010000"; --9
+			when "1010" =>  oHEX5_D <= "0001000"; --A
+			when "1011" =>  oHEX5_D <= "0000011"; --B
+			when "1100" =>  oHEX5_D <= "1000110"; --C
+			when "1101" =>  oHEX5_D <= "0100001"; --D
+			when "1110" =>  oHEX5_D <= "0000110"; --E
+			when "1111" =>  oHEX5_D <= "0001110"; --F
+			when others  => oHEX5_D <= "0111111"; --'-'
+		end case;		
+
+		case(Display(27 downto 24)) is
+			when "0000" =>  oHEX6_D <= "1000000"; --0
+			when "0001" =>  oHEX6_D <= "1111001"; --1
+			when "0010" =>  oHEX6_D <= "0100100"; --2
+			when "0011" =>  oHEX6_D <= "0110000"; --3
+			when "0100" =>  oHEX6_D <= "0011001"; --4
+			when "0101" =>  oHEX6_D <= "0010010"; --5
+			when "0110" =>  oHEX6_D <= "0000010"; --6
+			when "0111" =>  oHEX6_D <= "1111000"; --7
+			when "1000" =>  oHEX6_D <= "0000000"; --8
+			when "1001" =>  oHEX6_D <= "0010000"; --9
+			when "1010" =>  oHEX6_D <= "0001000"; --A
+			when "1011" =>  oHEX6_D <= "0000011"; --B
+			when "1100" =>  oHEX6_D <= "1000110"; --C
+			when "1101" =>  oHEX6_D <= "0100001"; --D
+			when "1110" =>  oHEX6_D <= "0000110"; --E
+			when "1111" =>  oHEX6_D <= "0001110"; --F
+			when others  => oHEX6_D <= "0111111"; --'-'
+		end case;		
+		
+		case(Display(31 downto 28)) is
+			when "0000" =>  oHEX7_D <= "1000000"; --0
+			when "0001" =>  oHEX7_D <= "1111001"; --1
+			when "0010" =>  oHEX7_D <= "0100100"; --2
+			when "0011" =>  oHEX7_D <= "0110000"; --3
+			when "0100" =>  oHEX7_D <= "0011001"; --4
+			when "0101" =>  oHEX7_D <= "0010010"; --5
+			when "0110" =>  oHEX7_D <= "0000010"; --6
+			when "0111" =>  oHEX7_D <= "1111000"; --7
+			when "1000" =>  oHEX7_D <= "0000000"; --8
+			when "1001" =>  oHEX7_D <= "0010000"; --9
+			when "1010" =>  oHEX7_D <= "0001000"; --A
+			when "1011" =>  oHEX7_D <= "0000011"; --B
+			when "1100" =>  oHEX7_D <= "1000110"; --C
+			when "1101" =>  oHEX7_D <= "0100001"; --D
+			when "1110" =>  oHEX7_D <= "0000110"; --E
+			when "1111" =>  oHEX7_D <= "0001110"; --F
+			when others  => oHEX7_D <= "0111111"; --'-'
+		end case;		
+      
+ end process;
+
+ --	Turn off all display
+   oLEDG(8 downto 3) <= "000000" ;
+   oLEDR(17 downto 0)<= (others =>'0');
+  
+END ARCHI;

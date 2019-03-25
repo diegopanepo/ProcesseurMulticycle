@@ -473,7 +473,7 @@ begin
 	begin
 		case inst_reg(27 downto 26) is
 			when "00" =>
-				case Instr(25 downto 21) is
+				case inst_reg(25 downto 21) is
 					when "10100"	=> instruc_mem_cour <= ADDi;
 					when "00100"	=> instruc_mem_cour <= ADDr;
 					when "11101"	=> instruc_mem_cour <= MOV;
