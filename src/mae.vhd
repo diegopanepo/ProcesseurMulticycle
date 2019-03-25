@@ -29,8 +29,8 @@ Architecture machine of mae is
 
 	type enum_instruction is (noINSTR, MOV, LDR, ADDi, ADDr,
 		CMP, STR, BAL, BLT, BX, DEF);
-	signal instruc_mem : enum_instruction;
-	signal instruc_reg : enum_instruction;
+	signal instruc_mem_cour : enum_instruction;
+	signal instruc_reg_cour : enum_instruction;
 
 	signal ISR : std_logic := '0';
 
@@ -87,15 +87,15 @@ begin
 				CPSRWrEn<= '0';
 				SPSRWrEn<= '0';
 				ResWrEn	<= '0';
-				if (instruc_mem = LDR or instruc_mem = STR or
-				instruc_mem = ADDr or instruc_mem = ADDi or
-				instruc_mem = CMP or instruc_mem = MOV) then
+				if (instruc_mem_cour = LDR or instruc_mem_cour = STR or
+				instruc_mem_cour = ADDr or instruc_mem_cour = ADDi or
+				instruc_mem_cour = CMP or instruc_mem_cour = MOV) then
 					EtatFutur <= ETAT2;
-				elsif (instruc_mem = BAL or (instruc_mem = BLT and N = '1')) then
+				elsif (instruc_mem_cour = BAL or (instruc_mem_cour = BLT and N = '1')) then
 					EtatFutur <= ETAT3;
-				elsif (instruc_mem = BLT and N = '0') then
+				elsif (instruc_mem_cour = BLT and N = '0') then
 					EtatFutur <= ETAT4;
-				elsif (instruc_mem = BX and ISR = '1') then
+				elsif (instruc_mem_cour = BX and ISR = '1') then
 					EtatFutur <= ETAT15;
 				elsif (IRQ = '0' and ISR = '0') then
 					EtatFutur <= ETAT16;
@@ -181,14 +181,14 @@ begin
 				CPSRWrEn<= '0';
 				SPSRWrEn<= '0';
 				ResWrEn	<= '0';
-				if instruc_mem = LDR or instruc_mem = STR or
-				instruc_mem = ADDi then
+				if instruc_mem_cour = LDR or instruc_mem_cour = STR or
+				instruc_mem_cour = ADDi then
 					EtatFutur <= ETAT6;
-				elsif instruc_mem = ADDr then
+				elsif instruc_mem_cour = ADDr then
 					EtatFutur <= ETAT7;
-				elsif instruc_mem = MOV then
+				elsif instruc_mem_cour = MOV then
 					EtatFutur <= ETAT8;
-				elsif instruc_mem = CMP then
+				elsif instruc_mem_cour = CMP then
 					EtatFutur <= ETAT9;
 				else
 					EtatFutur <= ETATnone;
@@ -212,11 +212,11 @@ begin
 				CPSRWrEn<= '0';
 				SPSRWrEn<= '0';
 				ResWrEn	<= '0';
-				if instruc_mem = LDR then
+				if instruc_mem_cour = LDR then
 					EtatFutur <= ETAT10;
-				elsif instruc_mem = STR then
+				elsif instruc_mem_cour = STR then
 					EtatFutur <= ETAT11;
-				elsif instruc_mem = ADDi then
+				elsif instruc_mem_cour = ADDi then
 					EtatFutur <= ETAT12;
 				else
 					EtatFutur <= ETATnone;
@@ -469,6 +469,38 @@ begin
 
 	--process(inst_reg)
 	--begin
+	process(inst_reg)
+	begin
+		case inst_reg(27 downto 26) is
+			when "00" =>
+				case Instr(25 downto 21) is
+					when "10100"	=> instruc_mem_cour <= ADDi;
+					when "00100"	=> instruc_mem_cour <= ADDr;
+					when "11101"	=> instruc_mem_cour <= MOV;
+					when "11010"	=> instruc_mem_cour <= CMP;
+					when others		=> report "Instruction invalide";
+									--instr_courante <= 'X';
+					end case;
+			when "01" =>
+				if inst_reg(20) = '1' then
+					instruc_mem_cour <= LDR;
+				elsif inst_reg(20) = '0' then
+					instruc_mem_cour <= STR;
+				else report "Instruction invalide";
+						--instr_courante <= 'X';
+				end if;
+			when "10" =>
+				if inst_reg(30) = '1' then
+					instruc_mem_cour <= BAL;
+				elsif inst_reg(30) = '0' then
+					instruc_mem_cour <= BLT;
+				else
+					report "Instruction invalide";--instr_courante <= 'X';
+				end if;
+			when others	=>
+				report "Instruction invalide"; --instr_courante <= 'X';
+		end case;
+	end process;
 
 	--process(inst_mem)
 	--begin
